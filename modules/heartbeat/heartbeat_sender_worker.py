@@ -47,7 +47,13 @@ def heartbeat_sender_worker(
     #                          ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
     # =============================================================================================
     # Instantiate class object (heartbeat_sender.HeartbeatSender)
-    heartbeat_instance = heartbeat_sender.HeartbeatSender.create(connection, local_logger)
+    result, heartbeat_instance = heartbeat_sender.HeartbeatSender.create(connection, local_logger)
+    if not result:
+        local_logger.error("Failed to create HeartbeatSender", True)
+        return
+
+    # Get Pylance to stop complaining
+    assert heartbeat_instance is not None
 
     # Main loop: do work.
     while not controller.is_exit_requested():
@@ -56,11 +62,13 @@ def heartbeat_sender_worker(
 
         # All of the work should be done within the class
         # Getting the output is as easy as calling a single method
-        result, value = heartbeat_instance.run()
+        result = heartbeat_instance.run()
 
         # Check result
         if not result:
-            continue
+            pass # do nothing, error already logged in run method
+        
+        time.sleep(1); # try to send heartbeat every second
 
 # =================================================================================================
 #                            ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
