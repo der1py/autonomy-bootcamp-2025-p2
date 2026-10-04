@@ -76,37 +76,76 @@ class Telemetry:
     def create(
         cls,
         connection: mavutil.mavfile,
-        args,  # Put your own arguments here
         local_logger: logger.Logger,
-    ):
+    ) -> tuple[bool, "Telemetry"]:
         """
         Falliable create (instantiation) method to create a Telemetry object.
         """
-        pass  # Create a Telemetry object
+        return True, cls(cls.__private_key, connection, local_logger)
 
     def __init__(
         self,
         key: object,
         connection: mavutil.mavfile,
-        args,  # Put your own arguments here
         local_logger: logger.Logger,
     ) -> None:
         assert key is Telemetry.__private_key, "Use create() method"
 
-        # Do any intializiation here
+        self.connection = connection
+        self.__logger = local_logger
+        self.__logger.info("Created Telemetry")
 
-    def run(
-        self,
-        args,  # Put your own arguments here
-    ):
+    def run(self) -> tuple[bool, TelemetryData | None]:
         """
         Receive LOCAL_POSITION_NED and ATTITUDE messages from the drone,
         combining them together to form a single TelemetryData object.
         """
-        # Read MAVLink message LOCAL_POSITION_NED (32)
-        # Read MAVLink message ATTITUDE (30)
-        # Return the most recent of both, and use the most recent message's timestamp
-        pass
+        position = None
+        attitude = None
+        deadline = time.monotonic() + 1
+
+        while position is None or attitude is None:
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                self.__logger.error("Timed out waiting for telemetry data", True)
+                return False, None
+
+            try:
+                msg = self.connection.recv_match(
+                    type=["ATTITUDE", "LOCAL_POSITION_NED"],
+                    blocking=True,
+                    timeout=remaining,
+                )
+            except Exception as error:  # pylint: disable=broad-exception-caught
+                self.__logger.error(f"Failed to retrieve telemetry data: {error}", True)
+                return False, None
+
+            if msg is None:
+                self.__logger.error("Timed out waiting for telemetry data", True)
+                return False, None
+
+            if msg.get_type() == "ATTITUDE":
+                attitude = msg
+            elif msg.get_type() == "LOCAL_POSITION_NED":
+                position = msg
+
+        td = TelemetryData(
+            time_since_boot=max(position.time_boot_ms, attitude.time_boot_ms),
+            x=position.x,
+            y=position.y,
+            z=position.z,
+            x_velocity=position.vx,
+            y_velocity=position.vy,
+            z_velocity=position.vz,
+            roll=attitude.roll,
+            pitch=attitude.pitch,
+            yaw=attitude.yaw,
+            roll_speed=attitude.rollspeed,
+            pitch_speed=attitude.pitchspeed,
+            yaw_speed=attitude.yawspeed,
+        )
+
+        return True, td
 
 
 # =================================================================================================

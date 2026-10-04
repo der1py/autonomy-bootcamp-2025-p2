@@ -18,13 +18,14 @@ from ..common.modules.logger import logger
 # =================================================================================================
 def telemetry_worker(
     connection: mavutil.mavfile,
-    args,  # Place your own arguments here
-    # Add other necessary worker arguments here
+    output_queue: queue_proxy_wrapper.QueueProxyWrapper,
+    controller: worker_controller.WorkerController,
 ) -> None:
     """
     Worker process.
 
-    args... describe what the arguments are
+    connection is the mavlink connection to the drone
+    controller is how the main process communicates to this worker process.
     """
     # =============================================================================================
     #                          ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
@@ -47,8 +48,28 @@ def telemetry_worker(
     #                          ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
     # =============================================================================================
     # Instantiate class object (telemetry.Telemetry)
+    result, tele_instance = telemetry.Telemetry.create(connection, local_logger)
+    if not result:
+        local_logger.error("Failed to create Telemetry", True)
+        return
+
+    # Get Pylance to stop complaining
+    assert tele_instance is not None
 
     # Main loop: do work.
+    while not controller.is_exit_requested():
+        # Method blocks worker if pause has been requested
+        controller.check_pause()
+
+        # All of the work should be done within the class
+        # Getting the output is as easy as calling a single method
+        result, td = tele_instance.run()
+
+        # Check result
+        if not result:
+            continue
+
+        output_queue.queue.put(td)
 
 
 # =================================================================================================

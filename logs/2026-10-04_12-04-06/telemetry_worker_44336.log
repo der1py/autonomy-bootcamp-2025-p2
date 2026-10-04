@@ -1,0 +1,6 @@
+12:04:07: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\telemetry\telemetry_worker.py | telemetry_worker | 45] Logger initialized
+12:04:07: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\telemetry\telemetry.py | __init__ | 96] Created Telemetry
+12:04:13: [ERROR] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\telemetry\telemetry.py | run | 124] Timed out waiting for telemetry data
+12:04:14: [ERROR] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\telemetry\telemetry.py | run | 124] Timed out waiting for telemetry data
+12:04:15: [ERROR] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\telemetry\telemetry.py | run | 124] Timed out waiting for telemetry data
+12:04:21: [ERROR] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\telemetry\telemetry.py | run | 124] Timed out waiting for telemetry data

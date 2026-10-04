@@ -17,8 +17,7 @@ from ..common.modules.logger import logger
 #                            ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
 # =================================================================================================
 def heartbeat_sender_worker(
-    connection: mavutil.mavfile,
-    controller: worker_controller.WorkerController
+    connection: mavutil.mavfile, controller: worker_controller.WorkerController
 ) -> None:
     """
     Worker process.
@@ -66,9 +65,11 @@ def heartbeat_sender_worker(
 
         # Check result
         if not result:
-            pass # do nothing, error already logged in run method
-        
-        time.sleep(1); # try to send heartbeat every second
+            pass  # do nothing, error already logged in run method
+
+        time.sleep(1)
+        # try to send heartbeat every second
+
 
 # =================================================================================================
 #                            ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑

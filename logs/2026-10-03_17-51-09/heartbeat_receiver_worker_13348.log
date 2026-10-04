@@ -1,0 +1,20 @@
+17:51:10: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver_worker.py | heartbeat_receiver_worker | 45] Logger initialized
+17:51:10: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | __init__ | 41] Created HeartbeatReceiver
+17:51:12: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:13: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:14: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:15: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:16: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:17: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:18: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:19: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:20: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:21: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:22: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:24: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:25: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:26: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:27: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:28: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:30: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message
+17:51:31: [WARNING] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 59] Missed HEARTBEAT message

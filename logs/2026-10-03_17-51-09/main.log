@@ -1,0 +1,3 @@
+17:51:10: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\common\modules\logger\logger_main_setup.py | setup_main_logger | 62] main logger initialized
+17:51:10: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_heartbeat_receiver.py | main | 115] Connected!
+17:51:10: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_heartbeat_receiver.py | read_queue | 74] Heartbeat receiver status: Connected
