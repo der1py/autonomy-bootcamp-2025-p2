@@ -47,6 +47,8 @@ class HeartbeatSender:
                 0,
                 0,
             )
+        # Catching all exceptions raised by the third-party MAVLink library.
+        # pylint: disable-next=broad-exception-caught
         except Exception as error:
             self.__logger.error(f"Failed to send heartbeat: {error}", True)
             return False

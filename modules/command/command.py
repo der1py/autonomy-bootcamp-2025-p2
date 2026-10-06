@@ -3,6 +3,7 @@ Decision-making logic.
 """
 
 import math
+from typing import Self
 
 from pymavlink import mavutil
 
@@ -38,7 +39,7 @@ class Command:  # pylint: disable=too-many-instance-attributes
         connection: mavutil.mavfile,
         target: Position,
         local_logger: logger.Logger,
-    ) -> tuple[bool, Command]:
+    ) -> tuple[bool, Self]:
         """
         Falliable create (instantiation) method to create a Command object.
         """
