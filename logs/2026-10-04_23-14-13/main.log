@@ -1,0 +1,30 @@
+23:14:14: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\common\modules\logger\logger_main_setup.py | setup_main_logger | 62] main logger initialized
+23:14:15: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | main | 129] Connected!
+23:14:16: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGE_ALTITUDE: 1
+23:14:16: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: 63.434948822922024
+23:14:17: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGE_ALTITUDE: -1
+23:14:17: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: 63.434948822922024
+23:14:20: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: 63.434948822922024
+23:14:20: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: 90.0
+23:14:21: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: 116.56505117707798
+23:14:21: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: 45.0
+23:14:22: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: 63.434948822921996
+23:14:22: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: 90.0
+23:14:23: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: 26.565051177077976
+23:14:23: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: 45.0
+23:14:24: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: 90.0
+23:14:24: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: 45.0
+23:14:25: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: 90.0
+23:14:25: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: 135.0
+23:14:26: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: -26.565051177077976
+23:14:26: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: -45.0
+23:14:27: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: -90.0
+23:14:27: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: -45.0
+23:14:28: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: -90.0
+23:14:28: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: -135.0
+23:14:29: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: -63.434948822921996
+23:14:29: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: -90.0
+23:14:30: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: -116.56505117707798
+23:14:30: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: -45.0
+23:14:31: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: -63.43494882292201
+23:14:31: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 77] CHANGING_YAW: -90.0

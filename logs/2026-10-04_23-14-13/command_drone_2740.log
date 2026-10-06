@@ -1,0 +1,3 @@
+23:14:15: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 45] Logger initialized
+23:14:16: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 76] Received a valid command
+23:14:16: [ERROR] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\command_drone.py | main | 74] Turning speed is not the desired value: 45.0

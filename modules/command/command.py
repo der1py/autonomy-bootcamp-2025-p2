@@ -82,7 +82,7 @@ class Command:  # pylint: disable=too-many-instance-attributes
             self.total_velocity_z / self.report_count,
         )
 
-        self.__logger.info("Average velocity: %s", average_velocity)
+        self.__logger.info(f"Average velocity: {average_velocity}")
 
         # Use COMMAND_LONG (76) message, assume the target_system=1 and target_componenet=0
         # The appropriate commands to use are instructed below
@@ -133,7 +133,7 @@ class Command:  # pylint: disable=too-many-instance-attributes
                 1,               # relative angle adjustment
                 0, 0, 0,
             )
-            outputs.append(f"CHANGING_YAW: {yaw_delta}")
+            outputs.append(f"CHANGING_YAW: {delta_yaw}")
         
         return True, outputs
 
