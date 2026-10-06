@@ -30,8 +30,15 @@ CONNECTION_STRING = "tcp:localhost:12345"
 #                            ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
 # =================================================================================================
 # Set queue max sizes (<= 0 for infinity)
+HEARTBEAT_RECEIVER_TO_MAIN_QUEUE_MAX_SIZE = 5
+TELEMETRY_TO_COMMAND_QUEUE_MAX_SIZE = 5
+COMMAND_TO_MAIN_QUEUE_MAX_SIZE = 5
 
 # Set worker counts
+HEARTBEAT_SENDER_WORKER_COUNT = 1
+HEARTBEAT_RECEIVER_WORKER_COUNT = 1
+TELEMETRY_WORKER_COUNT = 1
+COMMAND_WORKER_COUNT = 1
 
 # Any other constants
 
@@ -74,13 +81,43 @@ def main() -> int:
     #                          ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
     # =============================================================================================
     # Create a worker controller
+    controller = worker_controller.WorkerController()
 
     # Create a multiprocess manager for synchronized queues
+    mp_manager = mp.Manager()
 
     # Create queues
-
+    heartbeat_receiver_to_main_queue = queue_proxy_wrapper.QueueProxyWrapper(
+        mp_manager,
+        HEARTBEAT_RECEIVER_TO_MAIN_QUEUE_MAX_SIZE,
+    )
+    
+    telemetry_to_command_queue = queue_proxy_wrapper.QueueProxyWrapper(
+        mp_manager,
+        TELEMETRY_TO_COMMAND_QUEUE_MAX_SIZE,
+    )
+    command_to_main_queue = queue_proxy_wrapper.QueueProxyWrapper(
+        mp_manager,
+        COMMAND_TO_MAIN_QUEUE_MAX_SIZE,
+    )
+    
     # Create worker properties for each worker type (what inputs it takes, how many workers)
     # Heartbeat sender
+    result, heartbeat_sender_worker_properties = worker_manager.WorkerProperties.create(
+        count=HEARTBEAT_SENDER_WORKER_COUNT,  # How many workers
+        target=heartbeat_sender_worker.heartbeat_sender_worker,  # What's the function that this worker runs
+        work_arguments=(  # The function's arguments excluding input/output queues and controller
+            3,
+            100,
+        ),
+        input_queues=[],  # Note that input/output queues must be in the proper order
+        output_queues=[countup_to_add_random_queue],
+        controller=controller,  # Worker controller
+        local_logger=main_logger,  # Main logger to log any failures during worker creation
+    )
+    if not result:
+        print("Failed to create arguments for Countup")
+        return -1
 
     # Heartbeat receiver
 
