@@ -125,9 +125,7 @@ def main() -> int:
     output_queue = queue_proxy_wrapper.QueueProxyWrapper(mp_manager)
 
     # Just set a timer to stop the worker after a while, since the worker infinite loops
-    stop_timer = threading.Timer(
-        TELEMETRY_PERIOD * NUM_TRIALS * 2 + NUM_FAILS, stop, (controller,)
-    )
+    stop_timer = threading.Timer(TELEMETRY_PERIOD * NUM_TRIALS * 2 + NUM_FAILS, stop, (controller,))
     stop_timer.start()
 
     # Read the main queue (worker outputs)

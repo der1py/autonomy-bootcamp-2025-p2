@@ -50,9 +50,7 @@ def command_worker(
     #                          ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
     # =============================================================================================
     # Instantiate class object (command.Command)
-    result, cmd_instance = command.Command.create(
-        connection, target, local_logger
-    )
+    result, cmd_instance = command.Command.create(connection, target, local_logger)
     if not result:
         local_logger.error("Failed to create Command", True)
         return
@@ -69,7 +67,7 @@ def command_worker(
         # Getting the output is as easy as calling a single method
         if input_queue.queue.empty():
             continue
-        
+
         td = input_queue.queue.get()
         result, output = cmd_instance.run(td)
 
@@ -79,7 +77,7 @@ def command_worker(
 
         for message in output:
             output_queue.queue.put(message)
-        
+
 
 # =================================================================================================
 #                            ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑

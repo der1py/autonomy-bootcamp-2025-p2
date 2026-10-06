@@ -62,10 +62,7 @@ class Command:  # pylint: disable=too-many-instance-attributes
         self.total_velocity_z = 0.0
         self.__logger.info("Created Command")
 
-    def run(
-        self,
-        td: telemetry.TelemetryData
-    ):
+    def run(self, td: telemetry.TelemetryData):
         """
         Make a decision based on received telemetry data.
         """
@@ -87,7 +84,7 @@ class Command:  # pylint: disable=too-many-instance-attributes
         # Use COMMAND_LONG (76) message, assume the target_system=1 and target_componenet=0
         # The appropriate commands to use are instructed below
         outputs = []
-        
+
         # Adjust height using the comand MAV_CMD_CONDITION_CHANGE_ALT (113)
         # String to return to main: "CHANGE_ALTITUDE: {amount you changed it by, delta height in meters}"
         delta_height = self.target.z - td.z
@@ -96,16 +93,17 @@ class Command:  # pylint: disable=too-many-instance-attributes
             # target_system, target_component, command, confirmation,
             # param1, param2, param3, param4, param5, param6, param7
             self.connection.mav.command_long_send(
-                1, 0,
+                1,
+                0,
                 mavutil.mavlink.MAV_CMD_CONDITION_CHANGE_ALT,
-                0,                                         # confirmation
-                1.0,                                       # param1: rate (m/s)
-                0,                                         # param2: unused
-                0,                                         # param3: unused
-                0,                                         # param4: unused
-                0,                                         # param5: unused
-                0,                                         # param6: unused
-                self.target.z,                             # param7: target altitude
+                0,  # confirmation
+                1.0,  # param1: rate (m/s)
+                0,  # param2: unused
+                0,  # param3: unused
+                0,  # param4: unused
+                0,  # param5: unused
+                0,  # param6: unused
+                self.target.z,  # param7: target altitude
             )
             outputs.append(f"CHANGE_ALTITUDE: {delta_height}")
 
@@ -117,24 +115,27 @@ class Command:  # pylint: disable=too-many-instance-attributes
 
         target_yaw = math.degrees(math.atan2(dy, dx))
         delta_yaw = (target_yaw - math.degrees(td.yaw) + 180) % 360 - 180
-        
+
         if abs(delta_yaw) > 5:
             direction = -1 if delta_yaw > 0 else 1
             # MAVLink yaw commands normally use a positive magnitude in param1,
             # with param3 specifying direction.
 
             self.connection.mav.command_long_send(
-                1, 0,
+                1,
+                0,
                 mavutil.mavlink.MAV_CMD_CONDITION_YAW,
                 0,
                 abs(delta_yaw),  # angle magnitude
-                45,              # yaw speed: arbitrary for this assignment
-                direction,       # verify project convention: + means clockwise in MAVLink
-                1,               # relative angle adjustment
-                0, 0, 0,
+                45,  # yaw speed: arbitrary for this assignment
+                direction,  # verify project convention: + means clockwise in MAVLink
+                1,  # relative angle adjustment
+                0,
+                0,
+                0,
             )
             outputs.append(f"CHANGING_YAW: {delta_yaw}")
-        
+
         return True, outputs
 
 
