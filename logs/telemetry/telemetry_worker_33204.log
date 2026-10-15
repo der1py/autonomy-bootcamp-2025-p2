@@ -1,0 +1,6 @@
+11:47:44: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\telemetry\telemetry_worker.py | telemetry_worker | 45] Logger initialized
+11:47:44: [INFO] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\telemetry\telemetry.py | __init__ | 96] Created Telemetry
+11:47:50: [ERROR] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\telemetry\telemetry.py | run | 125] Failed to retrieve telemetry data
+11:47:51: [ERROR] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\telemetry\telemetry.py | run | 125] Failed to retrieve telemetry data
+11:47:52: [ERROR] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\telemetry\telemetry.py | run | 125] Failed to retrieve telemetry data
+11:47:58: [ERROR] [C:\Users\derip\LocalDocuments\Projects\autonomy-bootcamp-2025-p2\modules\telemetry\telemetry.py | run | 125] Failed to retrieve telemetry data
